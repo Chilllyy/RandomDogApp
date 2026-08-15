@@ -1,5 +1,0 @@
-<RCC>
-  <qresource prefix="dog">
-    <file>app_icon.ico</file>
-  </qresource>
-</RCC>

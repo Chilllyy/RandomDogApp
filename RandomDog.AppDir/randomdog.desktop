@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Random Dog
+Comment=Random Dog Funny
+Exec=randomdog
+Icon=randomdog
+Type=Application
+Keywords=random;dog
+Categories=Utility;
