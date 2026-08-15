@@ -26,6 +26,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.buttonColorButton.clicked.connect(self.button_color)
         self.dogBreedList.currentIndexChanged.connect(self.update_sub_breeds)
 
+        next()
+
     def next(self):
         dog_breed = self.dogBreedList.currentText()
         dog_sub_breed = self.dogSubBreedList.currentText()
