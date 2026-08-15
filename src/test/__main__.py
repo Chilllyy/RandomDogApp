@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QColorDialog, QStyleFac
 from PySide6.QtCore import QByteArray, Qt
 from PySide6.QtGui import QPixmap
 import requests
-from .main_ui import Ui_MainWindow
+from src.test.main_ui import Ui_MainWindow
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
