@@ -2,16 +2,23 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>841</height>
+    <height>845</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>RandomDogPicker</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="main_res.qrc">
+    <normaloff>:/dog/app_icon.ico</normaloff>:/dog/app_icon.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -172,6 +179,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="main_res.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -18,12 +18,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QLabel,
     QMainWindow, QPushButton, QSizePolicy, QVBoxLayout,
     QWidget)
+from . import main_res_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 841)
+        MainWindow.setWindowModality(Qt.WindowModality.NonModal)
+        MainWindow.resize(800, 845)
+        icon = QIcon()
+        icon.addFile(u":/dog/app_icon.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        MainWindow.setWindowIcon(icon)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_3 = QVBoxLayout(self.centralwidget)
@@ -140,7 +145,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"RandomDogPicker", None))
         self.buttonColorButton.setText(QCoreApplication.translate("MainWindow", u"Select Button Color", None))
         self.guiColorButton.setText(QCoreApplication.translate("MainWindow", u"Select GUI Color", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Dog Breed", None))
