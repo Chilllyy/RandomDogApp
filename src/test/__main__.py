@@ -2,7 +2,7 @@ import sys
 import random
 from PySide6.QtWidgets import QApplication, QMainWindow, QColorDialog, QStyleFactory
 from PySide6.QtCore import QByteArray, Qt
-from PySide6.QtGui import QPixmap
+from PySide6.QtGui import QPixmap, QPalette, QColor
 import requests
 from src.test.main_ui import Ui_MainWindow
 
@@ -44,12 +44,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.get_image(message)
 
     def button_color(self):
-        color = QColorDialog().getColor()
-        self.nextButton.setStyleSheet(f"background-color: {color.name()}")
+        palette = self.nextButton.palette()
+        initial = palette.color(self.nextButton.backgroundRole())
+        color = QColorDialog().getColor(initial=initial)
+        palette.setColor(self.nextButton.backgroundRole(), color)
+        self.nextButton.setPalette(palette)
 
     def gui_color(self):
-        color = QColorDialog().getColor()
-        self.setStyleSheet(f"background-color: {color.name()}")
+        palette = self.palette()
+        initial = palette.color(self.backgroundRole())
+        color = QColorDialog().getColor(initial=initial)
+        palette.setColor(self.backgroundRole(), color)
+        self.setPalette(palette)
 
     def random(self):
         total = self.dogBreedList.count()
