@@ -47,6 +47,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         palette = self.nextButton.palette()
         initial = palette.color(self.nextButton.backgroundRole())
         color = QColorDialog().getColor(initial=initial)
+        if not color.isValid(): return
         palette.setColor(self.nextButton.backgroundRole(), color)
         self.nextButton.setPalette(palette)
 
@@ -54,6 +55,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         palette = self.palette()
         initial = palette.color(self.backgroundRole())
         color = QColorDialog().getColor(initial=initial)
+        if not color.isValid(): return
         palette.setColor(self.backgroundRole(), color)
         self.setPalette(palette)
 
